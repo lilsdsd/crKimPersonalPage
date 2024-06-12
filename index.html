@@ -1,95 +1,523 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
 Created using JS Bin
 http://jsbin.com
 
-Copyright (c) 2024 by elenakim0217 (http://jsbin.com/quxiwup/1/edit)
+Copyright (c) 2024 by anonymous (http://jsbin.com/nohuzukome/1/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
 <meta name="robots" content="noindex">
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-<head>
-  <style>
-    //.body {
-           margin: 0;
-           padding: 0;
-          }
+<meta name="robots" content="noindex">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chaerin and Modern Talking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
       
-    #header {
-            //background-color: #f0f0f0;
-            padding: 20px;
-            align-items: center;
+      #navi {
+            width:100%;
+            height:70px;
             text-align: center;
-            font-size: 100px;
+            margin: 50px;
+            color: white;
             }
+      #NT {
+            color: white;
+            font-size: 30px;
+            font-family: 'helvetica', sans-serif;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid white;
+          }
       
-    #nav {
-           background-color: gray;
-           align-items: center;
-           padding: 20px;
-           margin: 0 auto;
-         }
-    .side {
-           background-color: #f0f0f0;
-           //align-items: left;
-           padding: 5px;
-           //margin: 0 auto;
+      a   {color: white;
+           text-decoration: none;
           }
-    
-    #main {
-           background-color: #f0f0f0;
-           align-items: center;
-           padding: 5px;
-           margin: 0 auto;
-           width: 1000px;
-           height: 1500px;
-          }
-    
-    .img-container {
-          display: inline-block;
-          width: 50%
-          height: auto;
-          }
-    
-    .img-responsive {
-          width: 70%
-          height: auto;
-          }
-    
-    #side
-    
-    
-  </style>
-</head>
-    
-<body>
-   <div id="header">
-        <header>Modern Talking</header>
-   </div>
+
+      #Nwrap {display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              align-items: center;
+              text-align: center;
+              margin: 12px;
+              font-family: 'Helvetica Neue', sans-serif;
+              font-size: 20px
+              color: white;
+              height: 10px;
+              }
      
-   <div id="nav">
-  </div>
-     
-  <div class="side" float: left;>
-  </div>
-  
-  <div id="main">
-    <p> hello </p>
-  </div>
-  
-  <div class="img-container">
-    <img src="https://i.imgur.com/jaSlDVI.png" alt=Out of border class=img-responsive>
-    <img src="https://i.imgur.com/jaSlDVI.png" alt=Out of border class=img-responsive>
-    <img src="https://i.imgur.com/jaSlDVI.png" alt=Out of border class=img-responsive>
-  </div>
-  
-    
-   
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      .main-frame {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .header, .section, .footer {
+        width: 100%;
+        max-width: 1920px;
+      }
+
+      .header-top {
+        background: black
+        width: 100%;
+        max-width: 1920px;
+        padding: 0px;
+        height: 130px;
+        color: white;
+        font-size: 100px;
+        font-family: Geologica;
+        text-align: center;
+        border: 1px solid white;
+      }
+
+      .header-middle {
+        background: black;
+        margin-bottom: 6px;
+        width: 100%;
+        max-width: 1920px;
+        height: 100px;
+        color: white;
+        font-size 15px;
+        font-family: helvetica;
+        text-align: center;
+      }
+
+      .random-text {
+        overflow-wrap: break-word;
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 64px;
+        color: white;
+      }
+
+      .content {
+        border: 1px solid white;
+        background: black;
+        position: relative;
+        margin-left: 10px;
+        display: flex;
+        padding: 128px 27px 74px 1px;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+        height: 550px;
+      }
+
+      .image-box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .rotate {
+        animation: rotate 2s infinite linear;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .main-section {
+        background: black; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 16px 24px 7px;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+      }
+
+      .main-section-top, .main-section-bottom {
+        margin-bottom: 6px;
+        width: 100%;
+        max-width: 1920px;
+        height: 313px;
+       
+      }
+
+      .main-section-bottom {
+        height: 73px;
+      }
+
+      .middle-section {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        padding: 16px 22px 22px 52px;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+        height: 500px;
+
+      }
+
+      .middle-box {
+        background: black; 
+        width: 816px;
+        height: 400px;
+        color: white;
+        font-size: 20px;
+        font-family: helvetica;
+        text-align: center;
+        letter-spacing" 3px;"
+      }
+
+      .middle-box-container {
+        background: black;
+        display: flex;
+        padding: 16px 16px 16px 13px;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer-box-videoGroup, .footer-box-1, .footer-box-2 {
+        width: 430px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
       
+
+      .footer-box-video1 {
+ 
+        width: 250px;
+        height: 250px;
+        padding: 20px;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px 10px 20px;
+
+        background-image: url('https://i.imgur.com/2Q7xxX3.jpeg');
+        
+      }
+      .footer-box-video2 {
+
+        width: 250px;
+        height: 250px;
+        padding: 20px;
+        margin: 10px;
+  
+        background-image: url('https://i.imgur.com/GctlRjD.jpeg');
+        
+      }
+      
+      .footer-box-video3 {
+
+        width: 250px;
+        height: 250px;
+        padding: 20px;
+        margin: 10px;
+  
+        background-image: url('https://i.imgur.com/zMQrtkA.jpeg');
+        
+      }
+
+      .footer-row {
+        margin-bottom: 6px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+        align-items: stretch;
+      }
+
+      .footer-box-3, .footer-box-4, .footer-box-5 {
+        width: 250px;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid white;
+        background: black;
+        color: white;
+        text-align: left;
+        padding: 20px 15px 15px 20px;
+        
+      }
+
+
+      .footer-column {
+        margin-right: 18px;
+        display: flex;
+        column-gap: 9px;
+        width: 100%;
+        height: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      .footer-content {
+        margin-right: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        box-sizing: border-box;
+      }
+
+      .footer-box-6, .footer-box-7 {
+        background: orange;
+        margin-bottom: 11px;
+        width: 191px;
+        height: 117px;
+      }
+
+      .sider-main {
+        margin: 82px 0 23px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        box-sizing: border-box;
+        background: red;
+        height: 2000px;
+      }
+
+      .footer-section {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px 37px 0 41px;
+        width: 100%;
+        max-width: 1920px;
+        box-sizing: border-box;
+      }
+
+      .footer-box-8 {
+        background: white;
+        width: 191px;
+        height: 345px;
+      }
+
+      .main-content-wrapper {
+        display: flex;
+        width: 100%;
+        max-width: 1920px;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-frame">
+      
+      <div id="navi">
+      <div id="NT"><a href="https://mainpage.com"><b>The Perfect Musicians In The World!</b></a></div>
+      <div id="Nwrap">
+      <div id="NWham">
+      <a href="https://output.jsbin.com/haduyin" onmouseover="changeText(this, 'MYOUNGIN');"  onmouseout="changeText(this, 'Wham!');">Wham!</a>
+      </div>
+      <div id="NNIRVANA">
+      <a href="https://www.example.com" onmouseover="changeText(this, 'HYOJU');"  onmouseout="changeText(this, 'NIRVANA');">NIRVANA</a>
+      </div>
+      <div id="NBeatles">
+      <a href="https://www.example.com" onmouseover="changeText(this, 'MUBIN');"  onmouseout="changeText(this, 'The Beatles');">The Beatles</a>
+      </div>
+      <div id="NMT">
+      <a href="https://www.example.com" onmouseover="changeText(this, 'CHAERIN');"  onmouseout="changeText(this, 'Modern Talking');">Modern Talking</a>
+      </div>
+      </div>
+      </div>
+      <div class="header">
+        <div class="header-top">
+          <header> Modern Talking </header>
+        </div>
+        
+        <div class="main-section">
+          <div class="header-middle">
+            <h2> <bold>Click refresh button and the albums change randomly!</bold></h2>
+            <p>A German pop duo, rose to fame in the 1980s with their infectious blend of synthpop and dance music.
+            </p>
+          </div>
+          
+          <div class="content" id="random-container">
+            <span class="random-text">Random</span>
+            <button id="refresh-btn" style="background-image: url('https://via.placeholder.com/100x50'); background-size: cover; background-position: center; width: 100px; height: 50px; border: none; cursor: pointer; margin-top: 20px;">
+            </button>
+          </div>
+        </div>
+        
+        <div class="middle-section">
+          <div class="main-section-top">
+            <img src= "https://i.imgur.com/bCZhQh0.jpeg" id ="a">
+          </div>
+
+          <div class="main-section-bottom">
+          </div>
+        </div>
+       </div>
+      
+      <div class="main-content-wrapper">
+        <div class="main-content">
+          <div class="middle-box-container">
+            <div class="middle-box">
+              <p>Modern Talking was a German pop duo that dominated the charts in the 80s and again in the late 90s. The group consisted of singer Thomas Anders and songwriter/producer Dieter Bohlen. Known for their catchy Europop tunes and energetic synth sounds, hits like "You're My Heart, You're My Soul" and "Cheri Cheri Lady" made them international stars. After a break-up in the late 80s, they had a successful reunion that brought them even more chart-topping singles before finally disbanding in 2003.</p>
+              
+              
+              <p> Led by the smooth vocals of Thomas Anders and the songwriting genius of Dieter Bohlen, Modern Talking crafted irresistible dance anthems like "You're My Heart, You're My Soul" and "Cheri, Cheri Lady." These catchy tunes dominated charts worldwide, making them one of the most successful pop acts of the era. Their journey wasn't without drama though, as the duo disbanded in the late 80s. However, a triumphant reunion in the late 90s saw them return to the top of the charts with even more chart-toppers. Though their path eventually led them separate ways again in 2003, Modern Talking's legacy of dance floor staples continues to fill playlists and parties around the globe.</p>
+              
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <div class="footer-content">
+              <div class="footer-row">
+                <div class="footer-box-videoGroup"
+                <div class="item">
+                  
+                  <div class="footer-box-video1">
+                  </div>
+                  <div class="footer-box-video2">
+                  </div>
+                  <div class="footer-box-video3">
+                  </div>
+                </div>
+                </div>
+                <div class="footer-box-1">
+                </div>
+                <div class="footer-box-2">
+                </div>
+              </div>
+              
+              <div class="footer-column">
+                <div class="footer-box-3">
+                  <h3> You're My Heart, You're My Soul (1985)</h3>
+                  
+                  <p>This is arguably their most famous song, a high-energy euro disco anthem about devotion and everlasting love.</p>
+                  
+
+                </div>
+                
+               
+                
+                <div class="footer-box-4">
+                  <h3> Cheri Cheri Lady (1985)</h3>
+                  
+                  <p> Another of their signature songs, this catchy tune is full of synthpop goodness and playful lyrics.</p>
+                  
+                </div>
+                
+                <div class="footer-box-5">
+                  <h3> Brother Louie (1986) </h3>
+                  <p> A story about a jealous boyfriend, this song has a great melody and a driving beat.</p>
+                </div>
+               </div>
+              
+              
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="footer-box-8">
+      </div>
+    </div>
+    <script>
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function placeImages() {
+        const container = document.getElementById('random-container');
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+        const numberOfImages = 10;
+
+        const imageUrls = [
+          'https://i.imgur.com/iQxRhPx.png',
+          'https://i.imgur.com/wHpscOf.jpeg',
+          'https://i.imgur.com/kiijD7E.jpeg',
+          'https://i.imgur.com/j5ViDhv.jpeg',
+          'https://i.imgur.com/0l6ZQsL.jpeg',
+          'https://i.imgur.com/p2R0j98.jpeg',
+          'https://i.imgur.com/7oRBM9y.jpeg',
+          'https://i.imgur.com/boUGI62.jpeg',
+          'https://i.imgur.com/cgTTulG.jpeg',
+          'https://i.imgur.com/Jol6gtS.jpeg'
+        ];
+
+        container.innerHTML = '<span class="random-text"</span>';
+
+        for (let i = 0; i < numberOfImages; i++) {
+          const imageBox = document.createElement('div');
+          imageBox.className = 'image-box';
+          const randomX = getRandomInt(50, containerWidth - 200);
+          const randomY = getRandomInt(50, containerHeight - 200);
+          const randomAngle = getRandomInt(0, 359);
+
+          imageBox.style.left = `${randomX}px`;
+          imageBox.style.top = `${randomY}px`;
+          imageBox.style.transform = `rotate(${randomAngle}deg)`;
+
+          imageBox.style.backgroundImage = `url("${imageUrls[i]}")`;
+          imageBox.style.backgroundSize = 'cover';
+
+          imageBox.addEventListener('mouseover', () => {
+            imageBox.classList.add('rotate');
+          });
+
+          imageBox.addEventListener('mouseout', () => {
+            imageBox.classList.remove('rotate');
+          });
+
+          container.appendChild(imageBox);
+        }
+      }
+
+      window.onload = placeImages;
+      window.onresize = placeImages;
+    </script>
+  <script id="jsbin-javascript">
+    function changeText(element, newText)
+      {element.innerText = newText;}
+</script>
 </body>
 </html>
